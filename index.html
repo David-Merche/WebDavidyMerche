@@ -56,18 +56,18 @@
     }
 
     /* ---------- HERO ---------- */
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 2rem;
-      background: linear-gradient(rgba(247, 243, 236, .55), rgba(247, 243, 236, .78)),
-        url("foto portada.jpg.jpeg") center/cover fixed;
-      position: relative;
-    }
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  background: var(--crema);
+}
 
     .hero .eyebrow {
       letter-spacing: .5em;
@@ -643,6 +643,16 @@
 
   <!-- ======= PORTADA ======= -->
   <header class="hero">
+<div class="hero-fotos">
+  <div class="hero-foto activa" style="background-image: url('fotos/foto1.jpg');"></div>
+  <div class="hero-foto" style="background-image: url('fotos/foto2.jpg');"></div>
+  <div class="hero-foto" style="background-image: url('fotos/foto3.jpg');"></div>
+  <div class="hero-foto" style="background-image: url('fotos/foto4.jpg');"></div>
+  <div class="hero-foto" style="background-image: url('fotos/foto5.jpg');"></div>
+</div>
+
+<div class="hero-velo"></div>
+
     <p class="eyebrow">Nos casamos</p>
     <h1>David <span class="amp">&amp;</span> Mercè</h1>
     <p class="fecha">Sábado · 3 de Abril de 2027 · 12:30 h · Lleida</p>
