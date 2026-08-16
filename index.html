@@ -873,45 +873,73 @@
       });
     });
 
-    /* ====== ENVÍO DEL FORMULARIO ====== */
-    const form = document.getElementById('rsvp-form');
-    const msg = document.getElementById('form-msg');
-    const btn = document.getElementById('btn-enviar');
+    /* ====== ENVÍO DEL FORMULARIO → GOOGLE SHEETS ====== */
 
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      msg.className = 'msg';
-      btn.disabled = true; btn.textContent = 'Enviando…';
+const ENDPOINT = "https://script.google.com/macros/s/AKfycbwNfJiWZNPIvdFBrAaeKGUTmYd2Afd185PZIHz0nem03xjzqIUJAF1_rPSeQucEP4ghRQ/exec";
 
-      const datos = Object.fromEntries(new FormData(form).entries());
-      datos.fecha_envio = new Date().toLocaleString('es-ES');
+const form = document.getElementById('rsvp-form');
+const msg = document.getElementById('form-msg');
+const btn = document.getElementById('btn-enviar');
 
-      if (ENDPOINT.startsWith('PEGA_AQUI')) {
-        msg.className = 'msg error';
-        msg.textContent = '⚠ El formulario aún no está conectado.'
-        btn.disabled = false; btn.textContent = 'Enviar confirmación';
-        return;
-      }
+form.addEventListener('submit', async (e) => {
 
-      try {
-        await fetch(ENDPOINT, {
-          method: 'POST',
-          mode: 'no-cors',
-          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-          body: JSON.stringify(datos)
-        });
-        // Con no-cors no podemos leer la respuesta, pero el envío llega.
-        form.reset();
-        camposAsiste.style.display = 'block';
-        msg.className = 'msg ok';
-        msg.textContent = '¡Gracias! Hemos recibido tu confirmación. 💛';
-      } catch (err) {
-        msg.className = 'msg error';
-        msg.textContent = 'Hubo un problema al enviar. Inténtalo de nuevo o escríbenos directamente.';
-      } finally {
-        btn.disabled = false; btn.textContent = 'Enviar confirmación';
-      }
+  e.preventDefault();
+
+  msg.className = 'msg';
+  msg.textContent = '';
+
+  btn.disabled = true;
+  btn.textContent = 'Enviando…';
+
+  /* Recogemos los datos del formulario */
+  const datos = Object.fromEntries(
+    new FormData(form).entries()
+  );
+
+  /* Añadimos fecha y hora del envío */
+  datos.fecha_envio = new Date().toLocaleString('es-ES');
+
+  try {
+
+    await fetch(ENDPOINT, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {
+        'Content-Type': 'text/plain;charset=utf-8'
+      },
+      body: JSON.stringify(datos)
     });
+
+    /*
+     * Con no-cors no podemos leer la respuesta de Google,
+     * pero el envío sí se realiza.
+     */
+
+    form.reset();
+
+    /* Volvemos a mostrar los campos de alergias/canción */
+    camposAsiste.style.display = 'block';
+
+    msg.className = 'msg ok';
+    msg.textContent =
+      '¡Gracias! Hemos recibido tu confirmación. 💛';
+
+  } catch (err) {
+
+    console.error('Error enviando el formulario:', err);
+
+    msg.className = 'msg error';
+    msg.textContent =
+      'Hubo un problema al enviar. Inténtalo de nuevo.';
+
+  } finally {
+
+    btn.disabled = false;
+    btn.textContent = 'Enviar confirmación';
+
+  }
+
+});
 
     /* ====== COPIAR IBAN ====== */
 
