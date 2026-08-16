@@ -69,6 +69,46 @@
   background: var(--crema);
 }
 
+    /* ---------- CARRUSEL DE FOTOS DE PORTADA ---------- */
+
+.hero-fotos {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-foto {
+  position: absolute;
+  inset: 0;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+}
+
+.hero-foto.activa {
+  opacity: 1;
+}
+
+.hero-velo {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    rgba(247, 243, 236, .55),
+    rgba(247, 243, 236, .78)
+  );
+}
+
+    /* Texto de la portada por encima de las fotos */
+.hero > *:not(.hero-fotos):not(.hero-velo) {
+  position: relative;
+  z-index: 2;
+  }
+
+  /* ---------- TEXTO DE LA PORTADA ---------- */
+
     .hero .eyebrow {
       letter-spacing: .5em;
       text-transform: uppercase;
@@ -996,6 +1036,26 @@ await fetch(ENDPOINT, {
         }
       });
     }    
+ /* ====== CARRUSEL DE FOTOS DE PORTADA ====== */
+
+    const fotosHero = document.querySelectorAll('.hero-foto');
+
+    let fotoActual = 0;
+
+    if (fotosHero.length > 1) {
+
+      setInterval(() => {
+
+        fotosHero[fotoActual].classList.remove('activa');
+
+        fotoActual = (fotoActual + 1) % fotosHero.length;
+
+        fotosHero[fotoActual].classList.add('activa');
+
+      }, 5000);
+
+    }
+    
   </script>
 </body>
 
