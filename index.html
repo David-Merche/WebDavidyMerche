@@ -507,6 +507,98 @@
       color: #bdb3a4;
       margin-top: .5rem
     }
+
+    /* ---------- REGALO ---------- */
+    .regalo {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .regalo-texto {
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      color: var(--texto);
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    .iban-box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .8rem;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 1.2rem 1.4rem;
+      background: var(--blanco);
+      border: 1px solid var(--crema-2);
+      border-radius: 6px;
+      box-shadow: 0 4px 18px var(--sombra);
+    }
+
+    .iban {
+      font-family: 'Montserrat', sans-serif;
+      font-size: .95rem;
+      letter-spacing: .08em;
+      color: var(--texto);
+      word-break: break-word;
+    }
+
+    .btn-copiar {
+      flex-shrink: 0;
+      width: 42px;
+      height: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--crema-2);
+      border-radius: 6px;
+      background: var(--blanco);
+      color: var(--texto);
+      cursor: pointer;
+      transition: all .25s ease;
+      font-size: 1.1rem;
+    }
+
+    .btn-copiar:hover {
+      background: var(--crema-2);
+      border-color: var(--dorado);
+    }
+
+    .btn-copiar.copiado {
+      color: var(--dorado);
+      border-color: var(--dorado);
+    }
+
+    .copia-ok {
+      height: 1.2rem;
+      margin-top: .7rem;
+      color: var(--dorado);
+      font-size: .8rem;
+      opacity: 0;
+      transition: opacity .25s ease;
+    }
+
+    .copia-ok.visible {
+      opacity: 1;
+    }
+
+    @media (max-width: 600px) {
+      .iban-box {
+        padding: 1rem;
+        gap: .5rem;
+    }
+
+  .iban {
+    font-size: .78rem;
+    letter-spacing: .04em;
+  }
+
+  .btn-copiar {
+    width: 38px;
+    height: 38px;
+  }
+}
   </style>
 </head>
 
@@ -655,6 +747,48 @@
 
   <!-- ======= FOOTER ======= -->
   <footer>
+
+  </section>
+
+  <!-- ======= REGALO ======= -->
+  <section class="bloque regalo" id="regalo">
+
+    <h2 class="titulo">Regalo</h2>
+
+    <div class="sep"></div>
+
+    <p class="regalo-texto">
+      Poder compartir este día con vosotros es, sin duda, el mayor regalo.
+      Pero si queréis tener un detalle con nosotros, podéis hacerlo aquí:
+    </p>
+
+    <div class="iban-box">
+
+      <span class="iban" id="iban">
+        ES12 1234 5678 3456 9012 7890
+      </span>
+
+      <button
+        type="button"
+        class="btn-copiar"
+        id="btn-copiar"
+        aria-label="Copiar IBAN"
+        title="Copiar IBAN">
+        ⧉
+      </button>
+
+    </div>
+
+    <div class="copia-ok" id="copia-ok">
+      ¡IBAN copiado!
+    </div>
+
+  </section>
+
+  <!-- ======= FOOTER ======= -->
+  <footer>
+
+    
     <div class="nombres">David &amp; Mercè</div>
     <p>Con cariño · 03.04.2027 · Lleida</p>
   </footer>
