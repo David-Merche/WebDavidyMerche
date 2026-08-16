@@ -487,6 +487,134 @@
       border: 1px solid #e0b4b4
     }
 
+    /* ---------- REGALO / IBAN ---------- */
+
+.regalo-texto {
+  max-width: 760px;
+  margin: 0 auto 2rem;
+  color: var(--texto);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* Recuadro blanco del IBAN */
+.iban-box {
+  position: relative;
+  width: min(100%, 720px);
+  margin: 2rem auto 0;
+  padding: 1.8rem 4.5rem 1.8rem 2rem;
+
+  background: var(--blanco);
+  border: 1px solid var(--crema-2);
+  border-radius: 16px;
+
+  box-shadow: 0 3px 14px var(--sombra);
+
+  text-align: center;
+}
+
+/* Título IBAN */
+.iban-titulo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.45rem;
+  letter-spacing: .18em;
+  color: var(--texto);
+  margin-bottom: 1rem;
+}
+
+/* Número IBAN */
+.iban {
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  letter-spacing: .08em;
+  color: var(--texto);
+  line-height: 1.5;
+  word-break: break-word;
+}
+
+/* Botón copiar */
+.btn-copiar {
+  position: absolute;
+  right: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 44px;
+  height: 44px;
+
+  padding: 0;
+  border: 0;
+  background: transparent;
+
+  cursor: pointer;
+}
+
+/* Icono de dos cuadrados */
+.btn-copiar::before,
+.btn-copiar::after {
+  content: "";
+  position: absolute;
+
+  width: 15px;
+  height: 15px;
+
+  border: 1.5px solid #777;
+  border-radius: 2px;
+}
+
+.btn-copiar::before {
+  left: 9px;
+  top: 9px;
+}
+
+.btn-copiar::after {
+  left: 14px;
+  top: 14px;
+  background: var(--blanco);
+}
+
+/* Hover */
+.btn-copiar:hover::before,
+.btn-copiar:hover::after {
+  border-color: var(--dorado);
+}
+
+/* Mensaje de confirmación */
+.copia-ok {
+  height: 1.2rem;
+  margin-top: .8rem;
+  color: var(--dorado);
+  font-size: .8rem;
+  opacity: 0;
+  transition: opacity .25s ease;
+}
+
+.copia-ok.visible {
+  opacity: 1;
+}
+
+/* Móvil */
+@media (max-width: 600px) {
+
+  .iban-box {
+    padding: 1.5rem 3.5rem 1.5rem 1.2rem;
+  }
+
+  .iban-titulo {
+    font-size: 1.25rem;
+  }
+
+  .iban {
+    font-size: .78rem;
+    letter-spacing: .04em;
+  }
+
+  .btn-copiar {
+    right: .8rem;
+  }
+}
+
     /* ---------- FOOTER ---------- */
     footer {
       text-align: center;
@@ -601,39 +729,6 @@
     </div>
   </section>
 
-  <!-- ======= REGALO ======= -->
-<section class="bloque regalo" id="regalo">
-
-  <h2 class="titulo">Regalo</h2>
-
-  <div class="sep"></div>
-
-  <p class="regalo-texto">
-    Poder compartir este día con vosotros es, sin duda, el mayor regalo.
-    Pero si queréis tener un detalle con nosotros, podéis hacerlo aquí:
-  </p>
-
-  <div class="iban-box">
-
-    <span class="iban" id="iban">
-      ES12 1234 5678 9101 1121 3141
-    </span>
-
-    <button
-      type="button"
-      class="btn-copiar"
-      id="btn-copiar"
-      aria-label="Copiar IBAN"
-      title="Copiar IBAN">
-    </button>
-
-  </div>
-
-  <div class="copia-ok" id="copia-ok">
-    ¡IBAN copiado!
-  </div>
-
-</section>
 
   <!-- ======= FORMULARIO RSVP ======= -->
   <section class="bloque rsvp" id="rsvp">
@@ -691,6 +786,8 @@
   </section>
 
 <!-- ======= REGALO ======= -->
+
+  <!-- ======= REGALO ======= -->
 <section class="bloque regalo" id="regalo">
 
   <h2 class="titulo">Regalo</h2>
@@ -703,6 +800,10 @@
   </p>
 
   <div class="iban-box">
+
+    <div class="iban-titulo">
+      IBAN
+    </div>
 
     <span class="iban" id="iban">
       ES12 1234 5678 3456 9012 7890
@@ -723,6 +824,7 @@
   </div>
 
 </section>
+
 
   <!-- ======= FOOTER ======= -->
   <footer>
