@@ -143,45 +143,53 @@
     }
 
     .scroll-hint {
-      position: absolute;
-      /* Lo colocamos al final de la portada */
-      bottom: 1.2rem;
-      left: 50%;
-      transform: translateX(-50%);
+     position: absolute;
 
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+  /* Posición: centrado y abajo */
+  left: 50%;
+  bottom: 1.5rem;
 
-      font-size: .65rem;
-      letter-spacing: .3em;
-      text-transform: uppercase;
-      color: var(--texto-suave);
+  /* Centrado horizontal */
+  margin-left: -50px;
 
-      z-index: 20;
-      white-space: nowrap; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-      animation: bob 2s infinite;
-      }
+  width: 100px;
 
-      .scroll-hint::after {
-        content: "↓";
-        display: block; 
+  font-size: .65rem;
+  letter-spacing: .3em;
+  text-transform: uppercase;
 
-        margin-top: .3rem;
+  color: var(--texto-suave);
 
-        font-size: 1.3rem;
-        line-height: 1;
-        letter-spacing: 0; 
-        }
-    @keyframes bob {
+  z-index: 20;
+  white-space: nowrap;
 
-      0%,
-      100% {
-        transform: translateX(-50%) translateY(0);
-    }
-      50% {
-        transform: translateX(-50%) translateY(8px);
+  animation: bob 2s infinite;
+}
+
+.scroll-hint::after {
+  content: "↓";
+
+  display: block;
+
+  margin-top: .3rem;
+
+  font-size: 1.3rem;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+@keyframes bob {
+   0%,
+  100% {
+    margin-bottom: 0;
+  }
+
+  50% {
+    margin-bottom: 8px;
         }
       }
 
