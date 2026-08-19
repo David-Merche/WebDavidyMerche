@@ -142,21 +142,22 @@
       font-weight: 400;
     }
 
-    .scroll-hint {
-     position: absolute;
+    /* ---------- INDICADOR DESLIZA ---------- */
 
-  /* Posición: centrado y abajo */
-  left: 50%;
+.scroll-hint {
+  position: absolute;
+
+  /* Ocupa todo el ancho de la portada */
+  left: 0;
+  right: 0;
   bottom: 1.5rem;
 
-  /* Centrado horizontal */
-  margin-left: -50px;
+  /* Centrar el contenido */
+  width: 100%;
+  margin: 0;
+  padding: 0;
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  width: 100px;
+  text-align: center;
 
   font-size: .65rem;
   letter-spacing: .3em;
@@ -164,10 +165,10 @@
 
   color: var(--texto-suave);
 
-  z-index: 20;
+  z-index: 100;
   white-space: nowrap;
 
-  animation: bob 2s infinite;
+  animation: bob 2s ease-in-out infinite;
 }
 
 .scroll-hint::after {
@@ -179,20 +180,20 @@
 
   font-size: 1.3rem;
   line-height: 1;
+
   letter-spacing: 0;
 }
 
+/* Pequeño movimiento hacia arriba y abajo */
 @keyframes bob {
-   0%,
-  100% {
-    margin-bottom: 0;
+  0%, 100% {
+    transform: translateY(0);
   }
 
   50% {
-    margin-bottom: 8px;
-        }
-      }
-
+    transform: translateY(6px);
+  }
+}
     /* ---------- COUNTDOWN ---------- */
     .countdown {
       background: var(--blanco);
