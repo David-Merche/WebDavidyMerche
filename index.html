@@ -265,7 +265,7 @@
     section.bloque:first-of-type {
       padding-bottom: 1rem;
     }
-    section.bloque:nth-pf-type(2) {
+    section.bloque:nth-of-type(2) {
       padding-top: 1.5rem;
     }
 
@@ -835,7 +835,7 @@
     }
     .gracias-personas {
       display: flex;
-      flex-direction: column,
+      flex-direction: column;
       align-items: center;
       gap: 1rem;
     }
@@ -970,7 +970,6 @@
     <p class="intro">
       Aquí encontrarás toda la información.¡No olvides confirmar tu asistencia en el formulario!
     </p>
-  <div>
   </section>
 
   <!-- ======= CUÁNDO Y DÓNDE ======= -->
@@ -1103,7 +1102,7 @@
 
       <button type="submit" class="btn-enviar" id="btn-enviar">
         Enviar confirmación
-      </button
+      </button>
         
       <div class="msg" id="form-msg"></div>
       
@@ -1116,7 +1115,7 @@
 
       <p class="intro gracias-intro">
         Cualquier duda podéis escribirnos o llamarnos :) 
-      <p>
+      </p>
 
       <div class="gracias-personas">
 
@@ -1216,7 +1215,7 @@ await fetch(ENDPOINT, {
 
     msg.className = 'msg ok';
     msg.innerHTML =
-      '¡Gracias! Hemos recibido tu confirmación.<br><br>Que ilusión saber que formarás parte de un día tan especial para nosotros. 💙 ';
+      '¡Gracias! Hemos recibido tu confirmación.<br><br>Qué ilusión saber que formarás parte de un día tan especial para nosotros. 💙 ';
 
     msg.scrollIntoView({
       behavior: 'smooth',
