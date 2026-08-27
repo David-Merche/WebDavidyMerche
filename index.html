@@ -1214,9 +1214,15 @@ await fetch(ENDPOINT, {
     camposAsiste.style.display = 'block';
 
     msg.className = 'msg ok';
-    msg.innerHTML =
-      '¡Gracias! Hemos recibido tu confirmación.<br><br>Qué ilusión saber que formarás parte de un día tan especial para nosotros. 💙 ';
 
+    if (datos.asistencia === 'No podré ir') {
+      msg.innerHTML =
+        'Nos da mucha pena no poder compartir este día contigo, pero entendemos que no siempre es posible estar.<br><br>' +
+        'Esperamos verte muy pronto para celebrarlo juntos. 💙';
+    } else {
+      msg.innerHTML =
+      '¡Gracias! Hemos recibido tu confirmación.<br><br>Qué ilusión saber que formarás parte de un día tan especial para nosotros. 💙 ';
+    }
     msg.scrollIntoView({
       behavior: 'smooth',
       block: 'center'
