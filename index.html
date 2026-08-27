@@ -261,6 +261,14 @@
       text-align: center
     }
 
+    /* Menos espacio entre "Nos hace mucha ilusión" y "Cuándo y dónde" */
+    section.bloque:first-of-type {
+      padding-bottom: 2.5rem;
+    }
+    section.bloque:nth-pf-type(2) {
+      padding-top: 2.5rem;
+    }
+
     .titulo {
       font-size: clamp(2rem, 5vw, 2.8rem);
       font-weight: 500;
@@ -625,7 +633,7 @@
 .iban {
   display: block;
   font-family: 'Montserrat', sans-serif;
-  font-size: 1rem;
+  font-size: 1.15rem;
   letter-spacing: .08em;
   color: var(--texto);
   line-height: 1.5;
@@ -709,7 +717,7 @@
   }
 
   .iban {
-    font-size: .78rem;
+    font-size: .92rem;
     letter-spacing: .04em;
   }
 
@@ -906,9 +914,11 @@
     <h2 class="titulo">Nos hace mucha ilusión</h2>
     <p class="subtitulo">compartir este día contigo</p>
     <p class="intro">
-      Después de la etapa de noviazgo, queremos celebrar nuestra unión definitiva rodeados de las
-      personas que más queremos. Aquí encontrarás toda la información.
-      ¡No olvides confirmar tu asistencia en el formulario!
+      Después de la etapa de noviazgo, queremos celebrar nuestra unión definitiva rodeados de las personas que más queremos.
+    </p>
+    
+    <p class="intro">
+      Aquí encontrarás toda la información.¡No olvides confirmar tu asistencia en el formulario!
     </p>
   <div>
   </section>
@@ -1153,8 +1163,8 @@ await fetch(ENDPOINT, {
     camposAsiste.style.display = 'block';
 
     msg.className = 'msg ok';
-    msg.textContent =
-      '¡Gracias! Hemos recibido tu confirmación. 💛';
+    msg.innerHTML =
+      '¡Gracias! Hemos recibido tu confirmación.<br><br>Que ilusión saber que formarás parte de un día tan especial para nosotros. 💙 ';
 
   } catch (err) {
 
