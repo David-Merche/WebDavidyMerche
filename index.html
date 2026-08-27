@@ -263,10 +263,10 @@
 
     /* Menos espacio entre "Nos hace mucha ilusión" y "Cuándo y dónde" */
     section.bloque:first-of-type {
-      padding-bottom: 2.5rem;
+      padding-bottom: 1rem;
     }
     section.bloque:nth-pf-type(2) {
-      padding-top: 2.5rem;
+      padding-top: 1.5rem;
     }
 
     .titulo {
@@ -742,6 +742,13 @@
     font-size: .9rem;
     letter-spacing: .18em;
 }
+  .gracias-contacto {
+    padding: 3.5rem 1.5rem;
+}
+  .gracias-personas {
+    flex-direction: column;
+    gap: 1.5rem;
+}
   
   /* CONTADOR EN MÓVIL */
 
@@ -808,7 +815,49 @@
 .contacto-persona a:hover {
   text-decoration: underline;
 }
-    
+
+  /* ---------- GRACIAS ---------- */
+    .gracias-contacto {
+      background: #f2e6cf;
+      padding: 4rem 1.5rem;
+      text-align: center;
+    }
+    .gracias-titulo {
+      color: #92764d;
+      margin-bottom: .5rem;
+    }
+    .gracias-intro {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      color: var(--texto-suave);
+      margin-bottom: 2rem;
+    }
+    .gracias-personas {
+      display: flex;
+      justify-content: center;
+      gap: 4rem;
+      flex-wrap: wrap;
+    }
+    .gracias-persona {
+      min-width: 160px;
+    }
+    .gracias-persosna strong {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: var(--texto);
+      margin-bottom: .2rem;
+    }
+    .gracias-persona a {
+      font-size: .9rem;
+      color: #92764d;
+      text-decoration: none;
+    }
+    .gracias-persona a:hover {
+      text-decoration: underline;
+    }
+
     /* ---------- FOOTER ---------- */
     footer {
       text-align: center;
@@ -1051,38 +1100,40 @@
       
       <!-- ======= ENVIAR CONFIRMACIÓN ======= -->
 
-      <button type="submit" class="btn-enviar" id="btn-enviar">Enviar confirmación</button>
+      <button type="submit" class="btn-enviar" id="btn-enviar">
+        Enviar confirmación
+      </button
+        
       <div class="msg" id="form-msg"></div>
+      
     </form>
-  </section>
+    </section>
 
-  </section>
+    <!-- ======= GRACIAS ======= -->
+    <section class="gracias">
 
+      <h2 class="titulo gracias-titulo">Gracias</h2>  
+
+      <p class="gracias-intro">
+        Cualquier duda podéis escribirnos o llamarnos :) 
+      <p>
+
+      <div class="gracias-personas">
+
+        <div class="gracias-persona">
+          <strong>David Agost</strong>
+          <a href="tel:+34645241402">+34 645 241 402</a>
+        </div>
+
+        <div class="gracias-persona">
+          <strong>Mercè Mòdol</strong>
+          <a href="tel:+34620471817">+34 620 471 817</a>
+        </div>
+      </div>
+    </section>
 
   <!-- ======= FOOTER ======= -->
   <footer>
-
-  </section>
-
-
-  <!-- ======= FOOTER ======= -->
-  <footer>
- <div class="contacto-footer">
-    <p class="contacto-intro">
-      Cualquier duda podéis escribirnos o llamarnos :)
-    </p>
-
-    <p class="contacto-persona">
-      <strong>David Agost</strong><br>
-      <a href="tel:+34645241402">+34 645 241 402</a>
-    </p>
-
-    <p class="contacto-persona">
-      <strong>Mercè Mòdol</strong><br>
-      <a href="tel:+34620471817">+34 620 471 817</a>
-    </p>
-  </div>
-    
     <div class="nombres">David &amp; Mercè</div>
     <p>Con cariño · 03.04.2027 · Lleida</p>
   </footer>
@@ -1165,6 +1216,11 @@ await fetch(ENDPOINT, {
     msg.className = 'msg ok';
     msg.innerHTML =
       '¡Gracias! Hemos recibido tu confirmación.<br><br>Que ilusión saber que formarás parte de un día tan especial para nosotros. 💙 ';
+
+    msg.scrollIntoView({
+      behavior: 'smooth',
+      block: 'center'
+    });
 
   } catch (err) {
 
