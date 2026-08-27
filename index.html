@@ -96,11 +96,8 @@
   inset: 0;
   z-index: 1;
   background: linear-gradient(
-    to bottom,
-    rgba(247, 243, 236, .38) 0%,
-    rgba(247, 243, 236, .50) 38%,
-    rgba (247, 243, 236, .55) 65%,
-    rgba (247, 243, 236, .72) 100%
+    rgba(247, 243, 236, .55),
+    rgba(247, 243, 236, .78),
   );
 }
 
@@ -118,109 +115,88 @@
       justify-content: center;
       gap: 1rem;
 
-      position: absolute;
-      top: 11%;
-      left: 0;
-      right: 0;
-
-      margin: 0;
-
-      font-family: 'Montserrat', sans-serif;
-      font-size: .95rem;
-      font-weight: 400;
-      
-      letter-spacing: .42em;
+      letter-spacing: .45em;
       text-transform: uppercase;
+      font-size: 1.05rem;
       color: var(--dorado);
+      font-weight: 500;
+
+      margin-bottom: 1.5rem;
+
+      position: relative;
+      top: -5.5rem;    
     }
 
     .hero .eyebrow::before,
     .hero .eyebrow::after {
       content: "";
-      width: 32px;
+      width: 35px;
       height: 1px;
       background: var(--dorado);
-      opacity: .65;
+      opacity: .7;
     }
 
     .hero h1 {
-      position: absolute !important;
-      top: 36%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-
-      width: 100%;
-      
       font-family: 'Pinyon Script', cursive;
-      font-size: clamp(4.7rem, 14vw, 7rem);
+      font-size: clamp(4rem, 12vw, 7rem);
       font-weight: 400;
-      line-height: .78;
-      
-      color: #443a32;
-      text-align: center;
+      line-height: .85;
+      color: var(--texto);
     }
-
     .hero h1 .amp {
       display: block;
       font-family: 'Montserrat', sans-serif;
-      font-size: .23em;
+      font-size: normal;
       font-weight: 500;
-      font-style: normal;
+      color: #111;
 
-      color: #222;
-
+      font-size: .30em;
       line-height: 1;
-      margin: .65em 0;   
+      
+      margin: .35em 0 .4em;   
     }
 
     .hero .fecha {
-      position: absolute !important;
-      top: auto;
-      bottom: 12%;
-      left: 0;
-      right: 0;
-
-      margin: 0;
+      margin-top: 5rem;
+      top: 2.2rem;
       
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: .55rem;
+      gap: .7rem;
 
       font-family: 'Montserrat', sans-serif;
       text-transform: uppercase;
       color: var(--dorado);
-      font-weight: 400;
+      font-weight: 500;
       text-align: center; 
   }
     .hero .fecha-dia {
-      font-size: 1rem;
-      letter-spacing: .18em;
+      font-size: 1.08rem;
+      letter-spacing: .22em;
     }
 
     .hero .fecha-lugar {
-      font-size: .9rem;
-      letter-spacing: .22em;
+      font-size: .1rem;
+      letter-spacing: .27em;
     }
 
 /* ---------- INDICADOR DESLIZA ---------- */
 
 .scroll-hint {
   position: absolute;
-  bottom: 2.2rem;
+  bottom: 2rem;
   left: 0;
   right: 0;
 
-  z-index: 20;
-
   text-align: center;
 
-  font-size: .58rem;
-  letter-spacing: .28em;
+  font-size: .65rem;
+  letter-spacing: .3em;
   text-transform: uppercase;
   color: var(--texto-suave);
-  opacity: .8;
 
+  z-index: 20;
   white-space: nowrap;
 
   animation: bob 2s infinite;
@@ -229,8 +205,9 @@
 .scroll-hint::after {
   content: "↓";
   display: block;
-  margin-top: .25rem;
-  font-size: 1rem;
+  margin-top: .35rem;
+  font-size: 1.3rem;
+  line-height: 1;
   letter-spacing: 0;
 }
 
@@ -757,6 +734,9 @@
     right: .8rem;
   }
 
+  .hero .eyebrow {
+    top: -5.5rem; 
+ }
   .hero .fecha {
     margin-top: 4.5rem;
     top: 2.5rem;
@@ -770,11 +750,7 @@
   .hero .fecha-lugar {
     font-size: .9rem;
     letter-spacing: .18em;
- }
-  .hero .eyebrow {
-    top: -5.5rem; 
- }
-
+}
   .novios-icon-wrap {
     margin-top: 4.5rem;
 }
