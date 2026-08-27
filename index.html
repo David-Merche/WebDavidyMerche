@@ -816,43 +816,44 @@
   text-decoration: underline;
 }
 
-  /* ---------- GRACIAS ---------- */
+  /* ---------- GRACIAS / CONTACTO ---------- */
     .gracias-contacto {
-      background: #f2e6cf;
+      background: #f1e6d4;
       padding: 4rem 1.5rem;
       text-align: center;
     }
-    .gracias-titulo {
-      color: #92764d;
-      margin-bottom: .5rem;
+    .gracias-contacto .titulo {
+      margin-bottom: .4rem;
     }
     .gracias-intro {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.35rem;
+      max-width: 600px;
+      margin: 0 auto 1.6rem;
       color: var(--texto-suave);
-      margin-bottom: 2rem;
+      font-family: 'Montserrat', sans-serif;
+      font-size: .95rem;
+      line-height: 1.7;
     }
     .gracias-personas {
       display: flex;
-      justify-content: center;
-      gap: 4rem;
-      flex-wrap: wrap;
+      flex-direction: column,
+      align-items: center;
+      gap: 1rem;
     }
     .gracias-persona {
-      min-width: 160px;
+      text-align: center;
+      font-size: .95rem;
+      line-height: 1.5;
     }
-    .gracias-persosna strong {
+    .gracias-persona strong {
       display: block;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.3rem;
-      font-weight: 500;
       color: var(--texto);
-      margin-bottom: .2rem;
+      font-weight: 500;
     }
     .gracias-persona a {
-      font-size: .9rem;
-      color: #92764d;
+      display: block;
+      color: var(--dorado);
       text-decoration: none;
+      margin-top: .1rem;
     }
     .gracias-persona a:hover {
       text-decoration: underline;
@@ -1109,12 +1110,11 @@
     </form>
     </section>
 
-    <!-- ======= GRACIAS ======= -->
-    <section class="gracias">
+    <!-- ======= GRACIAS / CONTACTO ======= -->
+    <section class="gracias-contacto">
+      <h2 class="titulo">Gracias</h2>  
 
-      <h2 class="titulo gracias-titulo">Gracias</h2>  
-
-      <p class="gracias-intro">
+      <p class="intro gracias-intro">
         Cualquier duda podéis escribirnos o llamarnos :) 
       <p>
 
@@ -1129,6 +1129,7 @@
           <strong>Mercè Mòdol</strong>
           <a href="tel:+34620471817">+34 620 471 817</a>
         </div>
+        
       </div>
     </section>
 
