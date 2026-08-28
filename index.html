@@ -148,7 +148,11 @@
       font-size: clamp(4rem, 12vw, 7rem);
       font-weight: 400;
       line-height: .85;
-      color: var(--texto);
+      color: #4a4036;
+
+      text-shadow:
+        0 1px 2px rgba(255, 255, 255, .85),
+        0 2px 8px rgba(74, 64, 54, .25);
 
       display: flex;
       flex-direction: column;
@@ -160,19 +164,26 @@
     }
     .hero h1 .david {
       position: relative;
-      top: -.35rem;
+      top: -.45rem;
     }
     .hero h1 .amp {
       display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: .72em;
+      font-weight: 500;
+      line-height: .75;
+      color: #4a4036;
 
-      /*misma letra que David y Mercè*/
-      font-family: 'Pinyon Script', cursive;
-      font-size: .55em;
-      font-weight: 400;
-      line-height: 1;
-      color: var(--texto);
+      text-shadow:
+        0 1px 2px rgba(255, 255, 255, .85),
+        0 2px 8px rgba(74, 64, 54, .25);
 
-      margin: .22em 0 .28em;
+      margin: .45em 0 .5em;
+    }
+    .hero h1 .merce {
+      position: relative;
+      top: .45rem;
     }
 
     .hero .fecha {
