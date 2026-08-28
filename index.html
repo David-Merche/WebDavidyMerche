@@ -749,7 +749,14 @@
 /* ---------- ALOJAMIENTO ---------- */
 
 .alojamiento {
-  background: #eee5d8;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      #e5ddd2 0,
+      #e5ddd2 55px,
+      #ebe4da 55px,
+      #ebe4da 110px
+  );
   padding: 5.5rem 1.5rem;
   text-align: center;
 }
@@ -757,14 +764,7 @@
 .alojamiento-interior {
   max-width: 900px;
   margin: 0 auto;
-}
-.alojamiento-icono {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 2rem;
-  color: #4a4036;
-  margin-bottom: .8rem;
-  opacity: .75;
-}
+}  
 .alojamiento .titulo {
   color: #4a4036;
   margin-bottom: .8rem;
@@ -1189,7 +1189,7 @@
 
   <div class="alojamiento-interior">
 
-    <div class="alojamiento-icono">⌂</div>
+    <div class="sep"></div>
 
     <h2 class="titulo">Alojamiento</h2>
 
