@@ -750,15 +750,23 @@
 
 .alojamiento {
   background:
-    repeating-linear-gradient(
-      90deg,
-      #e5ddd2 0,
-      #e5ddd2 55px,
-      #ebe4da 55px,
-      #ebe4da 110px
-  );
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(255, 255, 255, .42),
+      transparent 38%
+  ),
+   radial-gradient(
+     circle at 80% 80%,
+     rgba(74, 64, 54, .05),
+     transparent 42%
+  ),
+  #e7e0d7
+
   padding: 5.5rem 1.5rem;
   text-align: center;
+
+  border-top: 1px solid rgba(176, 141, 87, .18);
+  border-bottom: 1px solid rgba(176, 141, 87, .18);
 }
 
 .alojamiento-interior {
