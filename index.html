@@ -149,18 +149,30 @@
       font-weight: 400;
       line-height: .85;
       color: var(--texto);
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .hero h1 .nombre {
+      display: block;
+    }
+    .hero h1 .david {
+      position: relative;
+      top: -.35rem;
     }
     .hero h1 .amp {
       display: block;
-      font-family: 'Montserrat', sans-serif;
-      font-size: normal;
-      font-weight: 500;
-      color: #111;
 
-      font-size: .30em;
+      /*misma letra que David y Mercè*/
+      font-family: 'Pinyon Script', cursive;
+      font-size: .55em;
+      font-weight: 400;
       line-height: 1;
-      
-      margin: .35em 0 .4em;   
+      color: var(--texto);
+
+      margin: .22em 0 .28em;
     }
 
     .hero .fecha {
@@ -174,7 +186,7 @@
 
       font-family: 'Montserrat', sans-serif;
       text-transform: uppercase;
-      color: var(--dorado);
+      color: #4a4036;
       font-weight: 500;
       text-align: center; 
 
@@ -946,7 +958,11 @@
 
     <p class="eyebrow">Nos casamos</p>
     
-    <h1>David <span class="amp">&amp;</span> Mercè</h1>
+    <h1>
+      <span class="nombre david">David</span>
+      <span class="amp">&amp;</span>
+      <span class="nombre merce">Mercè</span>
+    </h1>
     
     <div class="fecha">
       <span class="fecha-dia">Sábado · 3 de abril de 2027</span>  
