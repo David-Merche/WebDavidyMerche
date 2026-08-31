@@ -746,6 +746,80 @@
   opacity: 1;
 }
 
+/* ---------- FOTOS DE LA BODA ---------- */
+
+.fotos-boda {
+  background: var(--crema);
+  padding: 5rem 1.5rem;
+  text-align: center;
+}
+
+.fotos-boda-interior {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.fotos-boda-intro {
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  color: var(--texto-suave);
+  font-family: 'Montserrat', sans-serif;
+  font-size: .95rem;
+  line-height: 1.8;
+}
+
+.qr-box {
+  width: min(100%, 430px);
+  margin: 0 auto;
+  padding: 2rem;
+
+  background: var(--blanco);
+  border: 1px solid var(--crema-2);
+  border-radius: 12px;
+
+  box-shadow: 0 4px 18px rgba(74, 64, 54, .08);
+}
+
+.qr-link {
+  display: inline-block;
+}
+
+.qr-boda {
+  display: block;
+  width: 210px;
+  height: 210px;
+  margin: 0 auto;
+}
+
+.qr-ayuda {
+  margin: 1.2rem 0 1.3rem;
+  font-size: .8rem;
+  color: var(--texto-suave);
+}
+
+.btn-fotos {
+  display: inline-block;
+  padding: .7rem 1.8rem;
+
+  border: 1px solid var(--dorado);
+  border-radius: 30px;
+
+  color: var(--dorado);
+  background: transparent;
+
+  font-family: 'Montserrat', sans-serif;
+  font-size: .75rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+
+  transition: all .25s ease;
+}
+
+.btn-fotos:hover {
+  background: var(--dorado);
+  color: white;
+}
+
 /* ---------- ALOJAMIENTO ---------- */
 
 .alojamiento {
@@ -898,6 +972,16 @@
     border-left: none;
     border-top: 1px solid rgba(74, 64, 54, .20);
   }
+.fotos-boda {
+  padding: 4rem 1.5rem;
+}
+.qr-box {
+  padding: 1.7rem 1.2rem;
+}
+.qr-boda {
+  width: 190px;
+  height: 190px;
+}
   
   /* CONTADOR EN MÓVIL */
 
@@ -1392,6 +1476,57 @@
 
 </section>
 
+  <!-- ======= FOTOS DE LA BODA ======= -->
+<section class="fotos-boda">
+
+  <div class="fotos-boda-interior">
+
+    <div class="sep"></div>
+
+    <h2 class="titulo" data-i18n="fotosTitulo">
+      Comparte tus fotos
+    </h2>
+
+    <p class="fotos-boda-intro" data-i18n="fotosIntro">
+      Ayúdanos a guardar todos los momentos de este día.
+      Sube aquí las fotos y vídeos que hagas durante la boda.
+    </p>
+
+    <div class="qr-box">
+
+      <a
+        href="https://photos.app.goo.gl/GCP2AAM2B3ZTbYAD7"
+        target="_blank"
+        rel="noopener"
+        class="qr-link"
+      >
+        <img
+          class="qr-boda"
+          alt="QR álbum de fotos de la boda"
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZoAAAGaAQAAAAAefbjOAAADIklEQVR4nO2cwY3bMBBF30QEfKSAFLCl0B2kpGBL2g6kUtyBeDQg4edAUtbuLTEiee3RQRBlPngID8iZz6FN/PU1/vh7BhxyyCGHHHLIoeeErF6hvh17KM2xB8itw/kQ8xzaH0qSpAnM+sVIE5Tm7wmATpKkz9B+5jm0P5TbBJAuATtnM4hXYzQzoE0ZR5nn0HHQ2HcCOtk5B0gT2Pm/fJNDDwmFL22RexN5McY3YWPfzZCPMs+hw6AoaQAY3ySztxkNLKYhXstyImk+zjyHdoPqHDGWYKHD0iXMpI+TLF3aDRY7xjyHdoeKR2yk7LHvEFxrZAmL6VOHXc1zaHeIklXW7LMTaerqU/10BujKmlJy0OHBx+TQPVD7keOMhigVKWJYXWBoXbadH3xMDt0DrR6hMj2wzgewvktSmzzcI54dahNAnIE405zh9lTFzFtn94gXgOoykU81ohiA5hbLmn26iv0KUMk1DMJsaZNRdIJ8qurl+DYHyD2kYV/zHNodqguBJpCmrsaYZZlocUQLL2dfNV4GsnOUigCRLgGzvhPpEqCIU3HGzE6y8yHmOXQAlM0gB+xcQsnF9F6k7KpMkKYDzXNoN6hplhkgCoMlkAZh6WKQhquJfFITM/c1z6HdoRZHaN7qUppo2SdQ9Su6lok8+Jgcugdqu+G5B+KEJS2B8dccylP66AG6st3lc8TzQxuFqiYcm9RjnR5ilTU913h+aKtZJq23VbFWaYKr2K8FpakTo52kdwsUBxn7xWqRXdG4r/YZ2s88hw6II37OJY4gTlR9clpKAY1KHJF7zDXLV4HGfjENOSBdQimto0jZ8VpOamx3v77HmBy6L/usV90Sj60gYs05PY54Keh2pktDvJqGcl5DIk1LETPZFFt+izE5dF9k2XJOxhZZasgBsx5aoLme3PgeY3LoboUqfdzed2qb491spVI7Tvub59BjQPb7EtC7hVZ5G+d2/O8RzHNoVyhp1R7auc9WUuV6xCtAX6vzbzW4pVk/bSX6nms8PfSpfpL1vIbWzc4JblKEe8TzQ+b/TOaQQw455JBDDv0j9AerfFeXToHFoAAAAABJRU5ErkJggg=="
+        >
+      </a>
+
+      <p class="qr-ayuda" data-i18n="fotosQr">
+        Escanea el código QR o pulsa el botón
+      </p>
+
+      <a
+        href="https://photos.app.goo.gl/GCP2AAM2B3ZTbYAD7"
+        target="_blank"
+        rel="noopener"
+        class="btn-fotos"
+        data-i18n="fotosBoton"
+      >
+        Subir fotos
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
 
   <!-- ======= FORMULARIO RSVP ======= -->
   <section class="bloque rsvp" id="rsvp">
@@ -1595,6 +1730,11 @@ const traducciones = {
     respuestaSi: '¡Gracias! Hemos recibido tu confirmación.<br><br>Qué ilusión saber que formarás parte de un día tan especial para nosotros. 💙',
 
     error: 'Hubo un problema al enviar. Inténtalo de nuevo.'
+
+    fotosTitulo: 'Comparte tus fotos',
+    fotosIntro: 'Ayúdanos a guardar todos los momentos de este día. Sube aquí las fotos y vídeos que hagas durante la boda.',
+    fotosQr: 'Escanea el código Qr o pulsa el botón',
+    fotosBoton: 'Subir fotos',
   },
 
 
@@ -1656,6 +1796,11 @@ const traducciones = {
     respuestaSi: 'Gràcies! Hem rebut la teva confirmació.<br><br>Quina il·lusió saber que formaràs part d’un dia tan especial per a nosaltres. 💙',
 
     error: 'Hi ha hagut un problema en enviar el formulari. Torna-ho a intentar.'
+
+    fotosTitulo: 'Comparteix les teves fotos',
+    fotosIntro: 'Ajudan's a guardar tots els moments d'aquest dia. Puja aquí les fotos i vídeos que facis durant el casament.',
+    fotosQr: 'Escaneja el codi QR o prem el botó',
+    fotosBoton: 'Pujar fotos',
   },
 
 
@@ -1717,6 +1862,11 @@ const traducciones = {
     respuestaSi: "Thank you! We've received your RSVP.<br><br>We're so happy you'll be part of such a special day for us. 💙",
 
     error: 'There was a problem sending your RSVP. Please try again.'
+
+    fotosTitulo: 'Share your photos',
+    fotosIntro: 'Help us capture every moment of the day. Upload the photos and videos you take during the wedding.',
+    fotorQr: 'Scan the QR code or tap the button',
+    fotosBoton: 'Upload photos',
   }
 
 };
