@@ -873,6 +873,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  align-items: center;
 
   text-align: center;
 }
@@ -880,42 +881,39 @@
 /* Logo */
 .checkyourdress-logo {
   display: block;
-  width: 145px;
-  max-height: 150px;
+  width: 210px;
+  height: 120px;
   object-fit: contain;
-  margin: 0 auto 1.1rem;
+  margin: 0 auto 1rem;
 }
 
 /* Nombre de la web */
 .checkyourdress-nombre {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.65rem;
-  font-weight: 500;
-  color: var(--texto);
-  margin-bottom: .45rem;
+ display: none;
 }
 
 /* Frase principal */
 .checkyourdress-frase {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.3rem;
-  font-style: italic;
+  margin: .2rem 0 .8rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: .9rem;
+  font-weight: 400
   color: var(--dorado);
-  line-height: 1.35;
-  margin-bottom: .9rem;
+  line-height: 1.6;
 }
 
 /* Explicación */
 .checkyourdress-texto {
   max-width: 320px;
+  margin: 0 auto 1.3rem;
   font-family: 'Montserrat', sans-serif;
-  font-size: .85rem;
+  font-size: .8rem;
+  font-weight: 300;
   line-height: 1.7;
   color: var(--texto-suave);
-  margin-bottom: 1.4rem;
 }
 
-/* Botón, con el mismo estilo que "Subir fotos" */
+/* Botón, exactamente igual al de las fotos */
 .btn-checkyourdress {
   display: inline-block;
   padding: .7rem 1.8rem;
@@ -928,6 +926,7 @@
 
   font-family: 'Montserrat', sans-serif;
   font-size: .75rem;
+  font-weight: 300;
   letter-spacing: .12em;
   text-transform: uppercase;
 
@@ -1689,14 +1688,11 @@
 <div class="fotos-extra-col">
   <div class="checkyourdress-box">
     <img
-      src="fotos/checkyourdress-logo.png"
+      src="fotos/checkyourdress-logo.png.png"
       alt="CheckYourDress"
       class="checkyourdress-logo"
     >
-    <div class="checkyourdress-nombre">
-      CheckYourDress
-    <div>
-
+    
     <p
       class="checkyourdress-frase"
             data-i18n="checkFrase"
