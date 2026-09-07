@@ -819,6 +819,157 @@
   background: var(--dorado);
   color: white;
 }
+/* ---------- FOTOS + CHECK YOUR DRESS ---------- */
+
+/* Hacemos más ancho el bloque para poder poner dos columnas */
+.fotos-boda-interior {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+/* Contenedor de las dos opciones */
+.fotos-extra-grid {
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr;
+  gap: 2.5rem;
+  align-items: stretch;
+  margin-top: 2rem;
+}
+
+/* Separador vertical suave */
+.fotos-extra-separador {
+  width: 1px;
+  height: 82%;
+  align-self: center;
+  background: rgba(176, 141, 87, .25);
+}
+
+/* Las dos columnas */
+.fotos-extra-col {
+  display: flex;
+  justify-content: center;
+}
+
+/* La tarjeta del QR sigue igual, pero ocupa bien su columna */
+.fotos-extra-grid .qr-box {
+  width: 100%;
+  max-width: 430px;
+  margin: 0;
+}
+
+/* Tarjeta CheckYourDress */
+.checkyourdress-box {
+  width: 100%;
+  max-width: 430px;
+  padding: 2rem;
+
+  background: var(--blanco);
+  border: 1px solid var(--crema-2);
+  border-radius: 12px;
+
+  box-shadow: 0 4px 18px rgba(74, 64, 54, .08);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+/* Logo */
+.checkyourdress-logo {
+  display: block;
+  width: 145px;
+  max-height: 150px;
+  object-fit: contain;
+  margin: 0 auto 1.1rem;
+}
+
+/* Nombre de la web */
+.checkyourdress-nombre {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.65rem;
+  font-weight: 500;
+  color: var(--texto);
+  margin-bottom: .45rem;
+}
+
+/* Frase principal */
+.checkyourdress-frase {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  font-style: italic;
+  color: var(--dorado);
+  line-height: 1.35;
+  margin-bottom: .9rem;
+}
+
+/* Explicación */
+.checkyourdress-texto {
+  max-width: 320px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: .85rem;
+  line-height: 1.7;
+  color: var(--texto-suave);
+  margin-bottom: 1.4rem;
+}
+
+/* Botón, con el mismo estilo que "Subir fotos" */
+.btn-checkyourdress {
+  display: inline-block;
+  padding: .7rem 1.8rem;
+
+  border: 1px solid var(--dorado);
+  border-radius: 30px;
+
+  color: var(--dorado);
+  background: transparent;
+
+  font-family: 'Montserrat', sans-serif;
+  font-size: .75rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+
+  transition: all .25s ease;
+}
+
+.btn-checkyourdress:hover {
+  background: var(--dorado);
+  color: white;
+}
+
+
+/* ---------- MÓVIL ---------- */
+
+@media (max-width: 700px) {
+
+  .fotos-extra-grid {
+    grid-template-columns: 1fr;
+    gap: 1.8rem;
+  }
+
+  /* En móvil el separador pasa a ser horizontal */
+  .fotos-extra-separador {
+    width: 75%;
+    height: 1px;
+    justify-self: center;
+    background: rgba(176, 141, 87, .25);
+  }
+
+  .checkyourdress-box {
+    padding: 1.7rem 1.2rem;
+  }
+
+  .checkyourdress-logo {
+    width: 125px;
+  }
+
+  .checkyourdress-frase {
+    font-size: 1.2rem;
+  }
+}
+
 
 /* ---------- ALOJAMIENTO ---------- */
 
@@ -1492,6 +1643,12 @@
       Sube aquí las fotos y vídeos que hagas durante la boda.
     </p>
 
+ <!-- ======= DOS COLUMNAS: FOTOS + CHECK YOUR DRESS ======= -->
+
+    <div class="fotos-extra-grid">
+
+<!-- ===== COLUMNA IZQUIERDA: QR FOTOS ===== -->
+  <div class="fotos-extra-col">
     <div class="qr-box">
 
       <a
@@ -1525,6 +1682,54 @@
 
   </div>
 
+<!-- ===== SEPARADOR SUAVE ===== -->
+ <div class="fotos-extra-separador"></div>
+
+<!-- ===== COLUMNA DERECHA: CHECK YOUR DRESS ===== -->
+<div class="fotos-extra-col">
+  <div class="checkyourdress-box">
+    <img
+      src="fotos/checkyourdress-logo.png"
+      alt="CheckYourDress"
+      class="checkyourdress-logo"
+    >
+    <div class="checkyourdress-nombre">
+      CheckYourDress
+    <div>
+
+    <p
+      class="checkyourdress-frase"
+            data-i18n="checkFrase"
+          >
+            Que lo único que coincida sea la fecha.
+          </p>
+
+          <p
+            class="checkyourdress-texto"
+            data-i18n="checkTexto"
+          >
+            Comprueba si otra invitada ha elegido un look igual o parecido al tuyo.
+          </p>
+
+          <a
+            href="https://checkyourdress.com"
+            target="_blank"
+            rel="noopener"
+            class="btn-checkyourdress"
+            data-i18n="checkBoton"
+          >
+            Comprobar mi look
+          </a>
+
+        </div>
+
+      </div>
+
+
+    </div>
+    <!-- ======= FIN DOS COLUMNAS ======= -->
+
+    </div>
 </section>
 
 
@@ -1735,6 +1940,9 @@ const traducciones = {
     fotosIntro: 'Ayúdanos a guardar todos los momentos de este día. Sube aquí las fotos y vídeos que hagas durante la boda.',
     fotosQr: 'Escanea el código Qr o pulsa el botón',
     fotosBoton: 'Subir fotos',
+    checkFrase: 'Que lo único que coincida sea la fecha.',
+    checkTexto: 'Comprueba si otra invitada ha elegido un look igual o parecido al tuyo.',
+    checkBoton: 'Comprobar mi look', 
   },
 
 
@@ -1801,6 +2009,9 @@ const traducciones = {
     fotosIntro: 'Ajuda’ns a guardar tots els moments d’aquest dia. Puja aquí les fotos i vídeos que facis durant el casament.',
     fotosQr: 'Escaneja el codi QR o prem el botó',
     fotosBoton: 'Pujar fotos',
+    checkFrase: 'Que l'únic que coincideixi sigui la data.',
+    checkTexto: 'Comprova si una altra convidada ha triat un look igual o semblant al teu.',
+    checkBoton: 'Comprovar el meu look',
   },
 
 
@@ -1867,6 +2078,9 @@ const traducciones = {
     fotosIntro: 'Help us capture every moment of the day. Upload the photos and videos you take during the wedding.',
     fotosQr: 'Scan the QR code or tap the button',
     fotosBoton: 'Upload photos',
+    checkFrase; 'Let the date be the only match.',
+    checkTexto: 'Check whether another guest has chosen the same or a similar look.',
+    checkBoton: 'Check my look', 
   }
 
 };
