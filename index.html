@@ -1048,6 +1048,35 @@
 .hotel a:hover {
   opacity: .6;
 }
+/* ---------- BOTÓN WEB HOTEL ---------- */
+.hotel .btn-hotel {
+  display: inline-block;
+  align-self: center;
+
+  margin-top: .4rem;
+  padding: .7rem 1.5rem;
+
+  border: 1px solid var(--dorado);
+  border-radius: 30px;
+
+  background: transparent;
+  color: var(--dorado);
+
+  font-family: 'Montserrat', sans-serif;
+  font-size: .72rem;
+  font-weight: 400;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  transition: all .25s ease;
+}
+
+.hotel .btn-hotel:hover {
+  background: var(--dorado);
+  color: #fff;
+  opacity: 1;
+}
 
 /* Móvil */
 @media (max-width: 600px) {
@@ -1590,39 +1619,59 @@
 
     <div class="alojamientos-grid">
 
+    <!-- HOTEL 01 -->
       <div class="hotel">
         <span class="hotel-numero">01</span>
-        <h3>Nombre del hotel</h3>
+        <h3>ibis budget Lleida</h3>
         <p>Lleida</p>
 
-        <a href="#" target="_blank" rel="noopener">
-          <span data-i18n="verAlojamiento">Ver alojamiento</span>
-        </a>
-      </div>
-
-      <div class="hotel">
-        <span class="hotel-numero">02</span>
-        <h3>Nombre del hotel</h3>
-        <p>Lleida</p>
-
-        <a href="#" target="_blank" rel="noopener">
-          <span data-i18n="verAlojamiento">Ver alojamiento</span>
-        </a>
-      </div>
-
-      <div class="hotel">
-        <span class="hotel-numero">03</span>
-        <h3>Nombre del hotel</h3>
-        <p>Lleida</p>
-
-        <a href="#" target="_blank" rel="noopener">
-          <span data-i18n="verAlojamiento">Ver alojamiento</span>
-        </a>
-      </div>
-
-    </div>
-
+    <a
+      class="btn-hotel"
+      href="https://all.accor.com/hotel/7589/index.en.shtml?utm_campaign=seo+maps&amp;utm_medium=seo+maps&amp;utm_source=google+Maps"
+      target="_blank"
+      rel="noopener"
+    >
+      <span data-i18n="verAlojamiento">Ver alojamiento</span>
+    </a>
   </div>
+
+        <!-- HOTEL 02 -->
+      <div class="hotel">
+    <span class="hotel-numero">02</span>
+
+    <h3>Nombre del hotel</h3>
+
+    <p>Lleida</p>
+
+    <a
+      class="btn-hotel"
+      href="#"
+      target="_blank"
+      rel="noopener"
+    >
+      <span data-i18n="verAlojamiento">Ver alojamiento</span>
+    </a>
+  </div>
+
+  <!-- HOTEL 03 -->
+      <div class="hotel">
+    <span class="hotel-numero">03</span>
+
+    <h3>Nombre del hotel</h3>
+
+    <p>Lleida</p>
+
+    <a
+      class="btn-hotel"
+      href="#"
+      target="_blank"
+      rel="noopener"
+    >
+      <span data-i18n="verAlojamiento">Ver alojamiento</span>
+    </a>
+  </div>
+
+</div>
 
 </section>
 
