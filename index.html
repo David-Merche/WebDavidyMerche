@@ -998,7 +998,7 @@
 }
 .alojamientos-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 0;
   border-top: 1px solid rgba(74, 64, 54, .25);
   border-bottom: 1px solid rgba(74, 64, 54, .25);
@@ -1007,10 +1007,13 @@
   position: relative;
   padding: 2.5rem 2rem;
 }
-.hotel + .hotel {
-  border-left: none;
+.hotel:nth-child(odd) {
+  border-right: 1px solid rgba(74, 64, 54, .20);
+}
+.hotel: nth-child(n + 3) {
   border-top: 1px solid rgba(74, 64, 54, .20);
 }
+
 .hotel-numero {
   display: block;
   font-family: 'Montserrat', sans-serif;
@@ -1622,12 +1625,12 @@
     <!-- HOTEL 01 -->
       <div class="hotel">
         <span class="hotel-numero">01</span>
-        <h3>ibis budget Lleida</h3>
-        <p>Lleida</p>
+        <h3>Finca Prats Hotel Golf &amp; Spa</h3>
+        <p>★★★★★ · Lleida</p>
 
     <a
       class="btn-hotel"
-      href="https://all.accor.com/hotel/7589/index.en.shtml?utm_campaign=seo+maps&amp;utm_medium=seo+maps&amp;utm_source=google+Maps"
+      href="https://www.google.com/search?q=Finca+Prats+Hotel+Golf+%26+Spa"
       target="_blank"
       rel="noopener"
     >
@@ -1638,14 +1641,12 @@
         <!-- HOTEL 02 -->
       <div class="hotel">
     <span class="hotel-numero">02</span>
-
-    <h3>Nombre del hotel</h3>
-
-    <p>Lleida</p>
+    <h3>ibis Styles Lleida Torrefarrera</h3>
+    <p>★★★ · Lleida</p>
 
     <a
       class="btn-hotel"
-      href="#"
+      href="https://www.google.com/search?q=ibis+Styles+Lleida+Torrefarrera"
       target="_blank"
       rel="noopener"
     >
@@ -1656,20 +1657,34 @@
   <!-- HOTEL 03 -->
       <div class="hotel">
     <span class="hotel-numero">03</span>
-
-    <h3>Nombre del hotel</h3>
-
-    <p>Lleida</p>
+    <h3>Nastasi Hotel &amp; Spa</h3>
+    <p>★★★★ · Lleida</p>
 
     <a
       class="btn-hotel"
-      href="#"
+      href="https://www.google.com/search?q=Nastasi+Hotel+%26+Spa+Lleida"
       target="_blank"
       rel="noopener"
     >
       <span data-i18n="verAlojamiento">Ver alojamiento</span>
     </a>
   </div>
+
+      <!-- HOTEL 04 -->
+      <div class="hotel">
+        <span class="hotel-numero">04</span>
+        <h3>NH Lleida Pirineos</h3>
+        <p>★★★★ · Lleida</p>
+
+        <a
+          class="btn-hotel"
+          href="https://www.google.com/search?q=NH+Lleida+Pirineos"
+          target="_blank"
+          rel="noopener"
+        >
+          <span data-i18n="verAlojamiento">Ver alojamiento</span>
+        </a>
+      </div>
 
 </div>
 
