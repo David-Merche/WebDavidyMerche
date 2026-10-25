@@ -1000,20 +1000,18 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0;
-  border-top: 1px solid rgba(74, 64, 54, .25);
-  border-bottom: 1px solid rgba(74, 64, 54, .25);
+  border: 1px solid rgba(74, 64, 54, .25);
 }
 .hotel {
   position: relative;
   padding: 2.5rem 2rem;
-}
-.hotel:nth-child(odd) {
-  border-right: 1px solid rgba(74, 64, 54, .20);
-}
-.hotel: nth-child(n + 3) {
-  border-top: 1px solid rgba(74, 64, 54, .20);
+  min-width: 0;
 }
 
+/* Líneas verticales entre los tres hoteles */
+  .hotel:not(:last-child) {
+    border-right: 1px solid rgba(74, 64, 54, .25);
+  }
 .hotel-numero {
   display: block;
   font-family: 'Montserrat', sans-serif;
