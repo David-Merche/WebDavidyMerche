@@ -943,6 +943,27 @@
 
 @media (max-width: 700px) {
 
+  /* Título encima de la tarjeta CheckYourDress */
+  .fotos-extra-col:has(.checkyourdress-box)::before {
+    content: "Check Your Dress";
+    display: block;
+    width: 100%;
+    margin: 0 0 1.5rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem; 
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    color: var(--dorado);
+    text-align: center; 
+  }
+  /*Colocación del título y la tarjeta */
+  .fotos-extra-col:has(.checkyourdress-box) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
   .fotos-extra-grid {
     grid-template-columns: 1fr;
     gap: 1.8rem;
