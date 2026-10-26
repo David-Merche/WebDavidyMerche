@@ -950,10 +950,10 @@
     width: 100%;
     margin: 0 0 1.5rem;
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.8rem; 
-    font-weight: 400;
-    letter-spacing: 0.12em;
-    color: var(--dorado);
+    font-size: clamp(2rm, 5vw, 2.8rem);
+    font-weight: 500;
+    letter-spacing: normal;
+    color: var(--texto);
     text-align: center; 
   }
   /*Colocación del título y la tarjeta */
@@ -1441,6 +1441,31 @@
   color: var(--dorado);
   font-size: .7rem;
 }
+/* ---------- DESLIZA EN MÓVIL ---------- */
+@media (max-width: 600px) {
+  .scroll-hint {
+    bottom: 4rem; 
+  }
+}
+/* Centrar nombres, estrellas y ubicación */
+    .hotel h3,
+    .hotel p,
+    .hotel .estrellas,
+    .hotel .ubicacion {
+      width: 100%;
+      text-align: center;
+    }
+/* Centrar el botón Ver alojamiento */
+    .hotel .btn-hotel {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      align-self: center;
+      width: auto;
+      margin: .4rem auto 0;
+      text-align: center; 
+    }
+  }
 
   </style>
 </head>
