@@ -942,28 +942,16 @@
 /* ---------- MÓVIL ---------- */
 
 @media (max-width: 700px) {
-
-  /*Colocación del título y la tarjeta */
-  .fotos-extra-col:has(.checkyourdress-box) {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
   .fotos-extra-grid {
     grid-template-columns: 1fr;
     gap: 1.8rem;
   }
-
-  /* En móvil el separador pasa a ser horizontal */
   .fotos-extra-separador {
     width: 75%;
     height: 1px;
     justify-self: center;
     background: rgba(176, 141, 87, .25);
   }
-
   .checkyourdress-box {
     padding: 1.7rem 1.2rem;
   }
@@ -976,7 +964,42 @@
     font-size: 1.2rem;
   }
 }
-
+/* ---------- CHECK YOUR DRESS ---------- */
+.checkyourdress-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+  .checkyourdress-titulo {
+    font-family: 'Cormorant Garamond', serif; 
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    font-weight: 500;
+    color: car(--texto);
+    margin-bottom: .4rem;
+  }
+    .checkyourdress-descripcion {
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      font-family: 'Montserrat', sans-serif;
+      font-size: .95rem;
+      font-weight: 300;
+      line-height: 1.8;
+      color: var(--texto-suave);
+      text-align: center;
+    }
+    .checkyourdress-col .checkyourdress-box {
+      margin: 0 auto; 
+    }
+    /* En ordenador mantenemos las dos columnas */
+    @media (min-width: 701px) {
+      .fotos-extra-grid {
+        align-items: start;
+      }
+      .checkyourdress-col {
+        min-width: 0;
+      }
+    }
 
 /* ---------- ALOJAMIENTO ---------- */
 
@@ -1453,19 +1476,6 @@
       text-align: center; 
     }
   }
-@media (max-width: 700px) {
-  .checkyourdress-descripcion {
-    max-width: 340px;
-    margin: 0 auto 1.8rem;
-    padding: 0 0.5rem;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.85rem;
-    font-weight: 400;
-    line-height: 1.8;
-    color: var(--texto-suave);
-    text-align: center;
-  }
-}
   </style>
 </head>
 
@@ -1777,8 +1787,12 @@
  <div class="fotos-extra-separador"></div>
 
 <!-- ===== COLUMNA DERECHA: CHECK YOUR DRESS ===== -->
-<div class="fotos-extra-col">
+<div class="fotos-extra-col checkyourdress-col">
+  <h2 class="titulo checkyourdress-titulo">
+    Check Your Dress
+  </h2>
   <p class="checkyourdress-descripcion">
+    data-i18n="checkDescripcion">
     ¿Prefieres no coincidir de vestido? Comprueba si otra invitada ha elegido el mismo que tú y evita sorpresas el día de la boda.
   </p>
   <div class="checkyourdress-box">
@@ -1787,19 +1801,11 @@
       alt="CheckYourDress"
       class="checkyourdress-logo"
     >
-    
     <p
       class="checkyourdress-frase"
             data-i18n="checkFrase"
           >
             Que lo único que coincida sea la fecha.
-          </p>
-
-          <p
-            class="checkyourdress-texto"
-            data-i18n="checkTexto"
-          >
-            Comprueba si otra invitada ha elegido un look igual o parecido al tuyo.
           </p>
 
           <a
@@ -1818,6 +1824,7 @@
 
 
     </div>
+</section>
     <!-- ======= FIN DOS COLUMNAS ======= -->
 
     </div>
@@ -2032,7 +2039,7 @@ const traducciones = {
     fotosQr: 'Escanea el código Qr o pulsa el botón',
     fotosBoton: 'Subir fotos',
     checkFrase: 'Que lo único que coincida sea la fecha.',
-    checkTexto: 'Comprueba si otra invitada ha elegido un look igual o parecido al tuyo.',
+    checkDescripcion: '¿Prefieres no coincidir de vestido? Comprueba si otra invitada ha elegido el mismo que tú y evita sorpresas el día de la boda.',   
     checkBoton: 'Comprobar mi look', 
   },
 
@@ -2101,7 +2108,7 @@ const traducciones = {
     fotosQr: 'Escaneja el codi QR o prem el botó',
     fotosBoton: 'Pujar fotos',
     checkFrase: 'Que l’únic que coincideixi sigui la data.',
-    checkTexto: 'Comprova si una altra convidada ha triat un look igual o semblant al teu.',
+    checkDescripcion: 'Prefereixes no coincidir de vestit? Comprova si alguna altra convidada ha triat el mateix que tu i evita sorpreses el dia del casament.',
     checkBoton: 'Comprovar el meu look',
   },
 
@@ -2170,7 +2177,7 @@ const traducciones = {
     fotosQr: 'Scan the QR code or tap the button',
     fotosBoton: 'Upload photos',
     checkFrase: 'Let the date be the only match.',
-    checkTexto: 'Check whether another guest has chosen the same or a similar look.',
+    checkDescripcion: "Prefer not to wear the same dress as another guest? Check if someone else has chosen the same one and avoid surprises on the wedding day.",
     checkBoton: 'Check my look', 
   }
 
