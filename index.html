@@ -943,19 +943,6 @@
 
 @media (max-width: 700px) {
 
-  /* Título encima de la tarjeta CheckYourDress */
-  .fotos-extra-col:has(.checkyourdress-box)::before {
-    content: "Check Your Dress";
-    display: block;
-    width: 100%;
-    margin: 0 0 1.5rem;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2rm, 5vw, 2.8rem);
-    font-weight: 500;
-    letter-spacing: normal;
-    color: var(--texto);
-    text-align: center; 
-  }
   /*Colocación del título y la tarjeta */
   .fotos-extra-col:has(.checkyourdress-box) {
     display: flex;
@@ -1466,7 +1453,19 @@
       text-align: center; 
     }
   }
-
+@media (max-width: 700px) {
+  .checkyourdress-descripcion {
+    max-width: 340px;
+    margin: 0 auto 1.8rem;
+    padding: 0 0.5rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 400;
+    line-height: 1.8;
+    color: var(--texto-suave);
+    text-align: center;
+  }
+}
   </style>
 </head>
 
@@ -1779,6 +1778,9 @@
 
 <!-- ===== COLUMNA DERECHA: CHECK YOUR DRESS ===== -->
 <div class="fotos-extra-col">
+  <p class="checkyourdress-descripcion">
+    ¿Prefieres no coincidir de vestido? Comprueba si otra invitada ha elegido el mismo que tú y evita sorpresas el día de la boda.
+  </p>
   <div class="checkyourdress-box">
     <img
       src="fotos/checkyourdress-logo.png.png"
