@@ -1481,6 +1481,103 @@
       text-align: center; 
     }
   }
+  
+/* ==========================================
+   CORRECCIÓN FOTOS + CHECK YOUR DRESS
+   ========================================== */
+
+.fotos-boda-interior {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* DOS COLUMNAS EN ORDENADOR */
+.fotos-extra-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 1px minmax(0, 1fr);
+  gap: 35px;
+  align-items: start;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+/* LAS DOS COLUMNAS TIENEN LA MISMA ESTRUCTURA */
+.fotos-extra-grid > .fotos-extra-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+/* TÍTULOS ALINEADOS */
+.fotos-extra-grid .fotos-extra-col > .titulo {
+  margin: 0 0 15px;
+  width: 100%;
+  text-align: center;
+}
+
+/* DESCRIPCIONES */
+.fotos-extra-grid .fotos-boda-intro,
+.fotos-extra-grid .checkyourdress-descripcion {
+  width: 100%;
+  max-width: 420px;
+  margin: 0 0 30px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/* TARJETAS */
+.fotos-extra-grid .qr-box,
+.fotos-extra-grid .checkyourdress-box {
+  width: 100%;
+  max-width: 430px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* SEPARADOR VERTICAL */
+.fotos-extra-separador {
+  width: 1px;
+  height: 100%;
+  align-self: stretch;
+  background: rgba(176, 141, 87, 0.25);
+}
+
+/* CORREGIR EL COLOR DEL TÍTULO */
+.checkyourdress-titulo {
+  color: var(--texto);
+}
+
+/* ==========================================
+   MÓVIL
+   ========================================== */
+
+@media (max-width: 767px) {
+
+  .fotos-extra-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 35px;
+  }
+
+  .fotos-extra-separador {
+    width: 75%;
+    height: 1px;
+    justify-self: center;
+    align-self: center;
+  }
+
+  .fotos-extra-grid .qr-box,
+  .fotos-extra-grid .checkyourdress-box {
+    max-width: 430px;
+  }
+
+}
   </style>
 </head>
 
@@ -1738,6 +1835,9 @@
 
   <div class="fotos-boda-interior">
 
+    <div class="sep"></div>
+    
+    <!-- ======= DOS COLUMNAS: FOTOS + CHECK YOUR DRESS ======= -->
     <div class="fotos-extra-grid">
 
        <!-- COLUMNA IZQUIERDA: COMPARTE TUS FOTOS -->
@@ -1752,18 +1852,7 @@
     </p>
 <div class="qr-box">
 
-  
-    
-
- <!-- ======= DOS COLUMNAS: FOTOS + CHECK YOUR DRESS ======= -->
-
-    <div class="fotos-extra-grid">
-
-<!-- ===== COLUMNA IZQUIERDA: QR FOTOS ===== -->
-  <div class="fotos-extra-col">
-    <div class="qr-box">
-
-      <a
+  <a
         href="https://photos.app.goo.gl/GCP2AAM2B3ZTbYAD7"
         target="_blank"
         rel="noopener"
@@ -1834,7 +1923,6 @@
 
 
     </div>
-</section>
     <!-- ======= FIN DOS COLUMNAS ======= -->
 
     </div>
