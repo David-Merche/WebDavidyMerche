@@ -821,64 +821,76 @@
 }
 /* ---------- FOTOS + CHECK YOUR DRESS ---------- */
 
-/* Hacemos más ancho el bloque para poder poner dos columnas */
 .fotos-boda-interior {
   max-width: 980px;
-  margin: 0 auto;
+  margin: 0 auto; 
 }
-
-/* Contenedor de las dos opciones */
 .fotos-extra-grid {
   display: grid;
-  grid-template-columns: 1fr 1px 1fr;
+  grid-template-columns: minmax(0, 1fr) 1px minmax(0, 1fr);
   gap: 2.5rem;
-  align-items: stretch;
+  align-items: start;
   margin-top: 2rem;
 }
-
-/* Separador vertical suave */
 .fotos-extra-separador {
   width: 1px;
-  height: 82%;
-  align-self: center;
+  height: 100%;
   background: rgba(176, 141, 87, .25);
 }
-
-/* Las dos columnas */
-.fotos-extra-col {
+.fotos-extra-col,
+. checkyourdress-col {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center; 
+  text-align: center;
+  min-width: 0;
+  width: 100%;
 }
-
-/* La tarjeta del QR sigue igual, pero ocupa bien su columna */
-.fotos-extra-grid .qr-box {
+/* Títulos alineados */
+    .fotos-extra-col .titulo,
+    .checkyourdress-titulo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 5vw, 2.8rem);
+      font-weight: 500;
+      color: var(--texto);
+      line-height: 1.2;
+      margin: 0 0 .8rem;
+    }
+/* Descripciones con la misma altura */
+    .fotos-extra-col .fotos-boda-intro,
+    .checkyourdress-descripcion {
   width: 100%;
   max-width: 430px;
+  min-height: 100px;
+  margin: 0 0 1.5rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: .95rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--texto-suave);
+  text-align: center;
+}
+/* Tarjetas alineadas */
+.fotos-extra-grid .qr-box,
+.checkyourdress-col .checkyourdress-box {
+  width: 100%;
+  max-width: 430px;
+  min-height: 390px;
   margin: 0;
-}
-
-/* Tarjeta CheckYourDress */
-.checkyourdress-box {
-  width: 100%;
-  max-width: 430px;
   padding: 2rem;
-
   background: var(--blanco);
   border: 1px solid var(--crema-2);
   border-radius: 12px;
-
   box-shadow: 0 4px 18px rgba(74, 64, 54, .08);
-
+}
+/* Tarjeta CheckYourDress */
+.checkyourdress-box {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  align-items: center;
-
-  text-align: center;
+  align-items: center; 
+  justify-content: center; 
+  text-align: center; 
 }
-
-/* Logo */
 .checkyourdress-logo {
   display: block;
   width: 210px;
@@ -886,13 +898,9 @@
   object-fit: contain;
   margin: 0 auto 1rem;
 }
-
-/* Nombre de la web */
 .checkyourdress-nombre {
  display: none;
 }
-
-/* Frase principal */
 .checkyourdress-frase {
   margin: .2rem 0 .8rem;
   font-family: 'Montserrat', sans-serif;
@@ -901,8 +909,6 @@
   color: var(--dorado);
   line-height: 1.6;
 }
-
-/* Explicación */
 .checkyourdress-texto {
   max-width: 320px;
   margin: 0 auto 1.3rem;
@@ -912,24 +918,18 @@
   line-height: 1.7;
   color: var(--texto-suave);
 }
-
-/* Botón, exactamente igual al de las fotos */
 .btn-checkyourdress {
   display: inline-block;
   padding: .7rem 1.8rem;
-
   border: 1px solid var(--dorado);
   border-radius: 30px;
-
   color: var(--dorado);
   background: transparent;
-
   font-family: 'Montserrat', sans-serif;
   font-size: .75rem;
   font-weight: 300;
   letter-spacing: .12em;
   text-transform: uppercase;
-
   transition: all .25s ease;
 }
 
@@ -950,16 +950,21 @@
     width: 75%;
     height: 1px;
     justify-self: center;
-    background: rgba(176, 141, 87, .25);
+  }
+  .fotos-extra-col .fotos-boda-intro,
+  .checkyourdress-description {
+    min-height: 0;
+  }
+  .fotos-extra-grid .qr-box,
+  .checkyourdress-col .checkyourdress-box {
+    min-height: 0;
   }
   .checkyourdress-box {
     padding: 1.7rem 1.2rem;
   }
-
   .checkyourdress-logo {
     width: 125px;
   }
-
   .checkyourdress-frase {
     font-size: 1.2rem;
   }
@@ -1733,8 +1738,10 @@
 
   <div class="fotos-boda-interior">
 
-    <div class="sep"></div>
+    <div class="fotos-extra-grid">
 
+       <!-- COLUMNA IZQUIERDA: COMPARTE TUS FOTOS -->
+      <div class="fotos-extra-col">
     <h2 class="titulo" data-i18n="fotosTitulo">
       Comparte tus fotos
     </h2>
@@ -1743,6 +1750,10 @@
       Ayúdanos a guardar todos los momentos de este día.
       Sube aquí las fotos y vídeos que hagas durante la boda.
     </p>
+<div class="qr-box">
+
+  
+    
 
  <!-- ======= DOS COLUMNAS: FOTOS + CHECK YOUR DRESS ======= -->
 
